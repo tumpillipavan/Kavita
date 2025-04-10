@@ -1,14 +1,17 @@
 pipeline {
     agent any
 
-    tools {
-        maven 'maven3'
-    }
-
     stages {
+        stage('Checkout') {
+            steps {
+                git branch: 'main',
+                    url: 'https://github.com/tumpillipavan/Kavita.git'
+            }
+        }
+
         stage('Build') {
             steps {
-                dir('Kavita') {
+                dir('MavenHelloWorld-main') {
                     sh 'mvn clean package'
                 }
             }
@@ -16,7 +19,7 @@ pipeline {
 
         stage('Test') {
             steps {
-                dir('Kavita') {
+                dir('MavenHelloWorld-main') {
                     sh 'mvn test'
                 }
             }
