@@ -11,17 +11,13 @@ pipeline {
 
         stage('Build') {
             steps {
-                dir('MavenHelloWorld-main') {
-                    bat 'mvn clean package'
-                }
+                sh 'mvn clean package'
             }
         }
 
         stage('Test') {
             steps {
-                dir('MavenHelloWorld-main') {
-                    bat 'mvn test'
-                }
+                sh 'mvn test'
             }
         }
     }
