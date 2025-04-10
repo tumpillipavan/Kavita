@@ -5,7 +5,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 git branch: 'main',
-                    url: 'https://github.com/tumpillipavan/django-todo-cicd.git'
+                    url: 'https://github.com/tumpillipavan/Kavita.git'
             }
         }
 
